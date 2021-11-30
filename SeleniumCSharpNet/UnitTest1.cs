@@ -5,10 +5,8 @@ using System;
 
 namespace SeleniumCSharpNet
 {
-    public class Tests
+    public class Tests : DriverHelper
     {
-
-        public IWebDriver Driver;   
 
         [SetUp]
         public void Setup()
@@ -26,11 +24,12 @@ namespace SeleniumCSharpNet
 
             Driver.FindElement(By.XPath("//input[@name='ctl00$ContentPlaceHolder1$ChildMeal1']/following-sibling::div[text()='Cauliflower']")).Click();
 
-            IWebElement comboControl = Driver.FindElement(By.XPath("//input[@id='ContentPlaceHolder1_AllMealsCombo-awed']"));
+            string comboControlName = "ContentPlaceHolder1_AllMealsCombo";
+            string comboControlValue = "Almonds";
 
-            comboControl.Clear();
-            comboControl.SendKeys("Almond");
-            
+            CustomControl.ComboBox(comboControlName, comboControlValue);
+
+
             Assert.Pass();
         }
     }
