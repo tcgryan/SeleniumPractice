@@ -32,5 +32,11 @@ namespace SeleniumCSharpNet
 
             Assert.Pass();
         }
+
+        [Test]
+        public void LoginTest()
+        {
+            Driver.Navigate().GoToUrl("http://eaapp.somee.com/");
+        }
     }
 }
