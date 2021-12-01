@@ -9,9 +9,11 @@ namespace SeleniumCSharpNet.Pages
 {
     public class HomePage : DriverHelper
     {
-        IWebElement lnkLogin => Driver.FindElement(By.LinkText("Login"));
+        IWebElement lnkLogin = Driver.FindElement(By.LinkText("Login"));
 
-        public void ClickLogin() => lnkLogin.Click();
- 
+        public void ClickLogin()
+        {
+            lnkLogin.Click();
+        }
     }
 }
